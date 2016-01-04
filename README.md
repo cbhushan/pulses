@@ -4,13 +4,9 @@ These MetaPost macros draw simple but publication-quality MRI pulse
 sequence diagrams for TeX documents, by describing RF and gradients
 events as a series of logical objects along lines.
 
-The current source is on Bitbucket:
+This a fork of [the pulses macros by Mark White](https://bitbucket.org/mjwhite/pulses),
+which was [originally published in 2004](http://www.celos.net/comp/pulses/).
 
-  - <https://bitbucket.org/mjwhite/pulses>
-
-Some example images and comments can be found here:
-
-  - <http://www.celos.net/comp/pulses/>
 
 ## Usage
 
@@ -42,8 +38,7 @@ There didn't seem to be many straightforward tools for this in 2004,
 so I published the files online
 [here](https://bitbucket.org/mjwhite/pulses) 
 with some examples and comments. In 2016 I released the same code
-under a clear 2-clause BSD licence
-[here](http://www.celos.net/comp/pulses/).
+under a clear 2-clause BSD licence here.
 
 The 2016 release (1.0) is identical apart from a few lines in the
 header comments referring to the licence.  
