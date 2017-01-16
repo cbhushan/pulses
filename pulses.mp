@@ -103,6 +103,20 @@ def labelf(expr yoff, lab) =
     label.lft(lab infont defaultfont scaled 1.2, (0,yoff));
 enddef;
 
+def gradf(expr off, xs, ys) =
+    draw ((0,0)--(0.25u,1u)--(0.75u,1u)--(1u,0)) xscaled xs yscaled ys shifted off;
+enddef;
+
+def tablegrf(expr off, xs, ys, gran, upd) =
+    begingroup;
+    for i=-gran upto gran:
+        draw ((0,0)--(0.25u,1u)--(0.75u,1u)--(1u,0)) xscaled xs yscaled (ys*(i/gran)) shifted off withcolor 0.5white withpen pencircle scaled 0.5pt;
+    endfor;
+    endgroup;
+    gradf(off,xs,-upd*ys);
+    drawarrow ((0.5u*xs,-0.9u*ys*upd)+off)--((0.5u*xs,0.9u*ys*upd)+off) withpen pencircle scaled 2pt withcolor 0.3white;
+enddef;
+
 % ----------------------------------------------------------------------
 % Progressive functions (start with x)
 % These draw an object on the line and bump the current position
@@ -147,6 +161,16 @@ enddef;
 
 def xblip(expr l, h) =
     blipf((Ox,Oy),l,h);
+    Ox := Ox + l*u;
+enddef;
+
+def xgrad(expr l, h) =
+    gradf((Ox,Oy),l,h);
+    Ox := Ox + l*u;
+enddef;
+
+def xtablegr(expr l, h, grad, upd) =
+    tablegrf((Ox,Oy),l,h,grad,upd);
     Ox := Ox + l*u;
 enddef;
 
